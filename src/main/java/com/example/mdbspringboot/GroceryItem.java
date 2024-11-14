@@ -20,4 +20,9 @@ public class GroceryItem {
 			this.quantity = quantity;
 			this.category = category;
 		}
+
+		public void setCategory(String newCategory) {
+			// TODO Auto-generated method stub
+			throw new UnsupportedOperationException("Unimplemented method 'setCategory'");
+		}
 	}

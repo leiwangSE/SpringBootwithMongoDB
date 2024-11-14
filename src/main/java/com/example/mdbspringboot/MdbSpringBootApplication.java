@@ -52,13 +52,18 @@ public class MdbSpringBootApplication implements CommandLineRunner{
 		itemList.forEach(item -> System.out.println(getItemDetails(item)));
 	}
 
-	// public void getGroceryItemByName(String name) {
-	// 	System.out.println("Getting item by name: " + name);
-	// 	GroceryItem item = groceryItemRepo.findItemByName(name);
-	// 	System.out.println(getItemDetails(item));
-	// }
-
-	public void getItemsByCategory(String category) {
+	public void getGroceryItemByName(String name) {
+		System.out.println("Getting item by name: " + name);
+		GroceryItem item = groceryItemRepo.findItemByName(name);
+		System.out.println(getItemDetails(item));
+			}
+		
+			private char[] getItemDetails(GroceryItem item) {
+				// TODO Auto-generated method stub
+				throw new UnsupportedOperationException("Unimplemented method 'getItemDetails'");
+			}
+		
+			public void getItemsByCategory(String category) {
 		System.out.println("Getting items for the category " + category);
 		List<GroceryItem> list = groceryItemRepo.findAll(category);
 		
@@ -70,26 +75,26 @@ public class MdbSpringBootApplication implements CommandLineRunner{
 		System.out.println("Number of documents in the collection = " + count);
 	}
 
-	// public void updateCategoryName(String category) {
+	public void updateCategoryName(String category) {
 		 
-	// 	String newCategory = "munchies";
+		String newCategory = "munchies";
 		
-	// 	List<GroceryItem> list = groceryItemRepo.findAll(category);
+		List<GroceryItem> list = groceryItemRepo.findAll(category);
 		
-	// 	list.forEach(item -> {
-	// 		item.setCategory(newCategory);
-	// 	});
+		list.forEach(item -> {
+			item.setCategory(newCategory);
+		});
 		
-	// 	List<GroceryItem> itemsUpdated = groceryItemRepo.saveAll(list);
+		List<GroceryItem> itemsUpdated = groceryItemRepo.saveAll(list);
 		
-	// 	if(itemsUpdated != null)
-	// 		System.out.println("Successfully updated " + itemsUpdated.size() + " items.");		 
-	// }
+		if(itemsUpdated != null)
+			System.out.println("Successfully updated " + itemsUpdated.size() + " items.");		 
+	}
 
-	// public void deleteGroceryItem(String id) {
-	// 	groceryItemRepo.deleteById(id);
-	// 	System.out.println("Item with id " + id + " deleted...");
-	// }
+	public void deleteGroceryItem(String id) {
+		groceryItemRepo.deleteById(id);
+		System.out.println("Item with id " + id + " deleted...");
+	}
 	// public String getItemDetails(GroceryItem item) {
 
 	// 	System.out.println(
@@ -114,7 +119,7 @@ public class MdbSpringBootApplication implements CommandLineRunner{
 		
 		System.out.println("\n--------------GET ITEM BY NAME-----------------------------------\n");
 		
-		// getGroceryItemByName("Whole Wheat Biscuit");
+		getGroceryItemByName("Whole Wheat Biscuit");
 		
 		System.out.println("\n-----------GET ITEMS BY CATEGORY---------------------------------\n");
 		
@@ -136,7 +141,6 @@ public class MdbSpringBootApplication implements CommandLineRunner{
 						
 	}
 
-	
 
 }
 
